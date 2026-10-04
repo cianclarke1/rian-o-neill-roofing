@@ -3,6 +3,7 @@
   "private": true,
   "sideEffects": false,
   "type": "module",
+  "description": "Rian O'Neill Roofing website",
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",
