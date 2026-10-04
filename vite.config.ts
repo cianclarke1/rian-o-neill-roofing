@@ -6,6 +6,7 @@ import viteReact from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [tanstackStart(), nitro(), viteReact()],
   resolve: {
+    // Enable the @/* aliases defined in tsconfig.json for Vite builds.
     tsconfigPaths: true,
   },
 });
