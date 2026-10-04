@@ -1,10 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
+import { TikTokEmbed } from "@/components/TikTokEmbed";
 import { ArrowRight, Hammer, TreePine, ShieldCheck, Quote } from "lucide-react";
 import heroShed from "@/assets/hero-shed.jpg";
-import shedClassic from "@/assets/shed-classic.jpg";
-import shedModern from "@/assets/shed-modern.jpg";
-import shedCabin from "@/assets/shed-cabin.jpg";
 import craftHands from "@/assets/craft-hands.jpg";
 
 export const Route = createFileRoute("/")({
@@ -21,17 +19,22 @@ export const Route = createFileRoute("/")({
         property: "og:description",
         content: "Bespoke timber sheds, workshops and garden rooms hand-built in Kerry.",
       },
-      { property: "og:image", content: heroShed },
-      { name: "twitter:image", content: heroShed },
     ],
   }),
   component: HomePage,
 });
 
-const featured = [
-  { img: shedClassic, name: "The Classic Apex", tagline: "Timeless. Pitched roof. Built to last." },
-  { img: shedModern, name: "The Studio", tagline: "Modern garden room with natural light." },
-  { img: shedCabin, name: "The Cabin", tagline: "Log-style retreat for weekends in." },
+const availableSheds = [
+  { category: "Timber", brand: "Abwood", sizes: ["8×6", "10×6"] },
+  { category: "Metal", brand: "Globel", sizes: ["8×6", "10×7", "10×12"] },
+  { category: "Premium Metal", brand: "Satus", sizes: ["6×4", "9×6"] },
+];
+
+const tiktokVideos = [
+  { url: "https://www.tiktok.com/@rianoneill76/video/7516293865817591062", id: "7516293865817591062" },
+  { url: "https://www.tiktok.com/@rianoneill76/video/7604064126754671894", id: "7604064126754671894" },
+  { url: "https://www.tiktok.com/@rianoneill76/video/7604268107212819734", id: "7604268107212819734" },
+  { url: "https://www.tiktok.com/@rianoneill76/photo/7608626507052846359", id: "7608626507052846359" },
 ];
 
 function HomePage() {
@@ -100,7 +103,7 @@ function HomePage() {
         </div>
       </section>
 
-      {/* Featured range */}
+      {/* Sheds available */}
       <section className="bg-secondary/40 py-24 lg:py-32">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <div className="flex items-end justify-between gap-6">
@@ -109,35 +112,86 @@ function HomePage() {
                 The Range
               </p>
               <h2 className="mt-3 font-display text-4xl text-balance sm:text-5xl">
-                Built to suit your garden.
+                Sheds available now.
               </h2>
             </div>
             <Link
               to="/range"
               className="hidden items-center gap-2 text-sm text-primary hover:gap-3 sm:inline-flex"
             >
-              See all designs <ArrowRight className="h-4 w-4" />
+              See the full range <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
 
           <div className="mt-16 grid gap-8 md:grid-cols-3">
-            {featured.map((item) => (
-              <article key={item.name} className="group">
-                <div className="aspect-[4/5] overflow-hidden rounded-lg bg-muted">
-                  <img
-                    src={item.img}
-                    alt={item.name}
-                    loading="lazy"
-                    width={1024}
-                    height={1280}
-                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
-                  />
-                </div>
-                <h3 className="mt-6 font-display text-2xl">{item.name}</h3>
-                <p className="mt-2 text-sm text-muted-foreground">{item.tagline}</p>
+            {availableSheds.map((shed) => (
+              <article
+                key={shed.brand}
+                className="rounded-lg border border-border bg-background p-8"
+              >
+                <p className="text-xs uppercase tracking-[0.25em] text-primary">
+                  {shed.category}
+                </p>
+                <h3 className="mt-3 font-display text-3xl">{shed.brand}</h3>
+                <ul className="mt-6 space-y-2 text-sm text-muted-foreground">
+                  {shed.sizes.map((size) => (
+                    <li key={size} className="flex items-center gap-3">
+                      <span className="h-px w-6 bg-primary" />
+                      {size} ft
+                    </li>
+                  ))}
+                </ul>
               </article>
             ))}
           </div>
+
+          <div className="mt-16 rounded-2xl bg-foreground p-10 text-center text-background md:p-14">
+            <h3 className="font-display text-3xl text-balance sm:text-4xl">
+              Garden shed assembly — call for a free quote!
+            </h3>
+            <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-background/70">
+              We deliver and assemble across Kerry, Cork and Limerick. Tell us the
+              shed and the spot, and we'll take care of the rest.
+            </p>
+            <Link
+              to="/contact"
+              className="group mt-8 inline-flex items-center gap-2 rounded-full bg-background px-7 py-3.5 text-sm font-medium text-foreground transition-all hover:bg-primary hover:text-primary-foreground"
+            >
+              Get your free quote
+              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* TikTok videos */}
+      <section className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-32">
+        <div className="text-center">
+          <p className="text-xs uppercase tracking-[0.25em] text-muted-foreground">
+            On TikTok
+          </p>
+          <h2 className="mt-3 font-display text-4xl text-balance sm:text-5xl">
+            Watch Our Shed Builds
+          </h2>
+          <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
+            Follow the workshop in action — real builds, real timber, no shortcuts.
+            Play them right here.
+          </p>
+        </div>
+        <div className="mt-16 grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+          {tiktokVideos.map((video) => (
+            <TikTokEmbed key={video.id} url={video.url} videoId={video.id} />
+          ))}
+        </div>
+        <div className="mt-12 text-center">
+          <a
+            href="https://www.tiktok.com/@rianoneill76"
+            target="_blank"
+            rel="noreferrer"
+            className="group inline-flex items-center gap-2 text-sm text-primary hover:gap-3"
+          >
+            Follow @rianoneill76 on TikTok <ArrowRight className="h-4 w-4" />
+          </a>
         </div>
       </section>
 
