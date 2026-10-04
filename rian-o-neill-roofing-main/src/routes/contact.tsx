@@ -70,9 +70,9 @@ function ContactPage() {
                 defaultValue=""
               >
                 <option value="" disabled>Choose one…</option>
-                <option>The Classic Apex</option>
-                <option>The Studio</option>
-                <option>The Cabin</option>
+                <option>Timber</option>
+                <option>Metal</option>
+                <option>Premium Metal</option>
                 <option>Bespoke / Not sure yet</option>
               </select>
             </div>
@@ -110,7 +110,7 @@ function ContactPage() {
                   <div>
                     <p className="font-medium">Call the workshop</p>
                     <a href="tel:+353000000000" className="text-muted-foreground hover:text-foreground">
-                      +353 (0) 00 000 0000
+                      +353 (0) 87 446 2026
                     </a>
                   </div>
                 </li>
@@ -119,7 +119,7 @@ function ContactPage() {
                   <div>
                     <p className="font-medium">Email</p>
                     <a href="mailto:hello@rianoneilsheds.ie" className="text-muted-foreground hover:text-foreground">
-                      hello@rianoneilsheds.ie
+                      rianoneill76@gmail.com
                     </a>
                   </div>
                 </li>
