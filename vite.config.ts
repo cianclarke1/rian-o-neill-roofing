@@ -5,4 +5,7 @@ import viteReact from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [tanstackStart(), nitro(), viteReact()],
+  resolve: {
+    tsconfigPaths: true,
+  },
 });
