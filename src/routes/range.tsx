@@ -1,14 +1,14 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
 import { ArrowRight } from "lucide-react";
-import timberShed from "@/assets/timber-shed.jpeg.asset.json";
-import metalShed from "@/assets/metal-shed.jpeg.asset.json";
-import premiumMetalShed from "@/assets/premium-metal-shed.webp.asset.json";
+import timberShed from "@/assets/timber-shed.jpeg";
+import metalShed from "@/assets/metal-shed.jpeg";
+import premiumMetalShed from "@/assets/premium-metal-shed.webp";
 
 const shedPhotos: Record<string, { src: string; alt: string }> = {
-  Abwood: { src: timberShed.url, alt: "Finished timber shed" },
-  Globel: { src: metalShed.url, alt: "Finished metal shed" },
-  Satus: { src: premiumMetalShed.url, alt: "White and grey premium metal shed with black trim" },
+  Abwood: { src: timberShed, alt: "Finished timber shed" },
+  Globel: { src: metalShed, alt: "Finished metal shed" },
+  Satus: { src: premiumMetalShed, alt: "White and grey premium metal shed with black trim" },
 };
 
 export const Route = createFileRoute("/range")({
