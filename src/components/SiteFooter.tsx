@@ -14,8 +14,7 @@ export function SiteFooter() {
               </span>
             </h3>
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-background/70">
-              Hand-built timber sheds, workshops and garden rooms,
-              crafted in Killarney for homes across County Kerry and beyond.
+              Quality garden sheds supplied and professionally installed across Killarney, County Kerry and the surrounding areas.
             </p>
           </div>
 
