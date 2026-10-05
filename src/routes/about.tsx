@@ -14,7 +14,7 @@ export const Route = createFileRoute("/about")({
           "Rian O'Neill has been building garden sheds in Killarney, Co. Kerry for over two decades. Honest joinery, local timber, and a love of the craft.",
       },
       { property: "og:title", content: "About Rian O'Neill Garden Sheds" },
-      { property: "og:description", content: "A small workshop in Killarney with big standards." },
+      { property: "og:description", content: "Quality garden sheds, supplied and installed with very big standards." },
       { property: "og:image", content: craftHands },
     ],
   }),
@@ -27,7 +27,7 @@ function AboutPage() {
       <section className="mx-auto max-w-7xl px-6 pb-16 pt-24 lg:px-10 lg:pb-24 lg:pt-32">
         <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">About</p>
         <h1 className="mt-4 max-w-4xl font-display text-5xl leading-[1.05] text-balance sm:text-6xl lg:text-7xl">
-          A small workshop in Killarney<br />
+          Quality garden sheds, supplied and installed.<br />
           <em className="font-light italic">with very big standards.</em>
         </h1>
       </section>
@@ -52,22 +52,13 @@ function AboutPage() {
           </p>
           <div className="md:col-span-9 space-y-6 text-lg leading-relaxed text-foreground/85">
             <p>
-              Rian O'Neill started building sheds the way most good Kerry tradesmen
-              start anything — out of a need, in a back garden, with a borrowed saw.
-              Twenty years on, the workshop is bigger and the saws are his own,
-              but the standards haven't shifted an inch.
+              Rian O&apos;Neill Garden Sheds supplies and installs quality garden sheds for customers across Killarney, Kerry and the surrounding areas. With more than two years of experience in the trade, Rian provides a reliable and straightforward service from helping customers choose the right shed through to delivery and installation.
             </p>
             <p>
-              We're a small team. We don't ship flat-packs and we don't outsource a
-              single cut. Every shed is drawn, framed, clad, finished and delivered
-              by people whose name is over the door — people you'll meet on the
-              day of install.
+              The range includes traditional timber sheds, practical metal sheds and premium metal options, with a variety of sizes and styles to suit different gardens, storage needs and budgets. Whether you need extra storage, a workshop space or simply a practical addition to your garden, there is an option to suit your needs.
             </p>
             <p>
-              Our timber comes from responsibly managed forests, our finishes are
-              chosen to weather the wettest Atlantic winters, and our designs are
-              shaped as much by the gardens of Killarney as by the great timber
-              traditions of Scandinavia.
+              From choosing your shed to getting it installed, the aim is to make the whole process as simple as possible. Rian takes pride in providing a friendly, professional service and making sure every shed is supplied and installed to a high standard.
             </p>
           </div>
         </div>
