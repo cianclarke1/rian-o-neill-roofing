@@ -1,6 +1,6 @@
 import { Outlet, Link, createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
 
-import "../styles.css";
+import appCss from "../styles.css?url";
 
 function NotFoundComponent() {
   return (
@@ -45,6 +45,7 @@ function RootShell({ children }: { children: React.ReactNode }) {
     <html lang="en">
       <head>
         <HeadContent />
+        <link rel="stylesheet" href={appCss} />
       </head>
       <body>
         {children}
