@@ -1,6 +1,15 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
 import { ArrowRight } from "lucide-react";
+import timberShed from "@/assets/timber-shed.jpeg.asset.json";
+import metalShed from "@/assets/metal-shed.jpeg.asset.json";
+import premiumMetalShed from "@/assets/premium-metal-shed.webp.asset.json";
+
+const shedPhotos: Record<string, { src: string; alt: string }> = {
+  Abwood: { src: timberShed.url, alt: "Finished timber shed" },
+  Globel: { src: metalShed.url, alt: "Finished metal shed" },
+  Satus: { src: premiumMetalShed.url, alt: "White and grey premium metal shed with black trim" },
+};
 
 export const Route = createFileRoute("/range")({
   head: () => ({
@@ -82,6 +91,14 @@ function RangePage() {
                   </li>
                 ))}
               </ul>
+              <div className="mt-6 aspect-[4/3] overflow-hidden rounded-lg bg-muted">
+                <img
+                  src={shedPhotos[r.brand].src}
+                  alt={shedPhotos[r.brand].alt}
+                  loading="lazy"
+                  className="h-full w-full object-cover"
+                />
+              </div>
               <div className="mt-8 pt-2">
                 <Link
                   to="/contact"
