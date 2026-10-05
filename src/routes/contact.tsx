@@ -12,10 +12,14 @@ export const Route = createFileRoute("/contact")({
       {
         name: "description",
         content:
-          "Request a quote for a hand-built garden shed in Killarney, Co. Kerry. Call, email, or send us your project details.",
+          "Get in touch with Rian O'Neill Garden Sheds for quality garden sheds supplied and installed across Killarney, Co. Kerry and surrounding areas.",
       },
       { property: "og:title", content: "Contact Rian O'Neill Garden Sheds" },
-      { property: "og:description", content: "Get a quote for a bespoke timber shed in Kerry." },
+      {
+        property: "og:description",
+        content:
+          "Quality garden sheds supplied, delivered and professionally installed across Kerry and surrounding areas.",
+      },
     ],
   }),
   component: ContactPage,
@@ -37,15 +41,23 @@ function ContactPage() {
   return (
     <SiteLayout>
       <Toaster position="top-center" />
+
       <section className="mx-auto max-w-7xl px-6 pb-16 pt-24 lg:px-10 lg:pb-24 lg:pt-32">
-        <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">Contact</p>
+        <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
+          Contact
+        </p>
+
         <h1 className="mt-4 max-w-4xl font-display text-5xl leading-[1.05] text-balance sm:text-6xl lg:text-7xl">
-          Tell us about your<br />
-          <em className="font-light italic">garden.</em>
+          Looking for a garden
+          <br />
+          <em className="font-light italic">shed?</em>
         </h1>
+
         <p className="mt-8 max-w-xl text-lg leading-relaxed text-muted-foreground">
-          A few details is all we need to get started. We'll come back to you
-          within a working day with sketches, sizes and a fair price.
+          Get in touch with Rian to discuss your shed requirements. Whether
+          you're looking for a timber shed, metal shed or premium metal shed,
+          we can help you choose the right option and take care of delivery
+          and installation.
         </p>
       </section>
 
@@ -55,25 +67,36 @@ function ContactPage() {
           <form onSubmit={onSubmit} className="space-y-6 lg:col-span-3">
             <div className="grid gap-6 sm:grid-cols-2">
               <Field label="Name" name="name" required />
-              <Field label="Phone" name="phone" type="tel" />
+              <Field label="Phone" name="phone" type="tel" required />
             </div>
+
             <Field label="Email" name="email" type="email" required />
-            <Field label="Town / County" name="location" placeholder="e.g. Killarney, Co. Kerry" />
+
+            <Field
+              label="Town / County"
+              name="location"
+              placeholder="e.g. Killarney, Co. Kerry"
+              required
+            />
 
             <div>
               <label className="block text-xs uppercase tracking-[0.2em] text-muted-foreground">
                 Type of shed
               </label>
+
               <select
                 name="type"
                 className="mt-2 w-full rounded-md border border-input bg-background px-4 py-3 text-base focus:border-primary focus:outline-none"
                 defaultValue=""
+                required
               >
-                <option value="" disabled>Choose one…</option>
-                <option>The Classic Apex</option>
-                <option>The Studio</option>
-                <option>The Cabin</option>
-                <option>Bespoke / Not sure yet</option>
+                <option value="" disabled>
+                  Choose one…
+                </option>
+                <option>Timber Shed</option>
+                <option>Metal Shed</option>
+                <option>Premium Metal Shed</option>
+                <option>Not sure yet</option>
               </select>
             </div>
 
@@ -81,10 +104,11 @@ function ContactPage() {
               <label className="block text-xs uppercase tracking-[0.2em] text-muted-foreground">
                 Tell us a bit more
               </label>
+
               <textarea
                 name="message"
                 rows={5}
-                placeholder="Rough size, intended use, timeframe…"
+                placeholder="Approximate size, intended use, preferred location, installation requirements…"
                 className="mt-2 w-full rounded-md border border-input bg-background px-4 py-3 text-base focus:border-primary focus:outline-none"
               />
             </div>
@@ -104,37 +128,59 @@ function ContactPage() {
               <p className="text-xs uppercase tracking-[0.25em] text-muted-foreground">
                 Or reach us directly
               </p>
+
               <ul className="mt-6 space-y-5 text-sm">
                 <li className="flex items-start gap-4">
                   <Phone className="mt-0.5 h-5 w-5 text-primary" />
+
                   <div>
-                    <p className="font-medium">Call the workshop</p>
-                    <a href="tel:+353000000000" className="text-muted-foreground hover:text-foreground">
-                      +353 (0) 00 000 0000
+                    <p className="font-medium">Call Rian</p>
+
+                    <a
+                      href="tel:+353874462026"
+                      className="text-muted-foreground hover:text-foreground"
+                    >
+                      +353 (0) 87 446 2026
                     </a>
                   </div>
                 </li>
+
                 <li className="flex items-start gap-4">
                   <Mail className="mt-0.5 h-5 w-5 text-primary" />
+
                   <div>
                     <p className="font-medium">Email</p>
-                    <a href="mailto:hello@rianoneilsheds.ie" className="text-muted-foreground hover:text-foreground">
-                      hello@rianoneilsheds.ie
+
+                    <a
+                      href="mailto:rianoneill76@gmail.com"
+                      className="text-muted-foreground hover:text-foreground"
+                    >
+                      rianoneill76@gmail.com
                     </a>
                   </div>
                 </li>
+
                 <li className="flex items-start gap-4">
                   <MapPin className="mt-0.5 h-5 w-5 text-primary" />
+
                   <div>
-                    <p className="font-medium">Workshop</p>
-                    <p className="text-muted-foreground">Killarney, Co. Kerry, Ireland</p>
+                    <p className="font-medium">Based in</p>
+
+                    <p className="text-muted-foreground">
+                      Killarney, Co. Kerry, Ireland
+                    </p>
                   </div>
                 </li>
+
                 <li className="flex items-start gap-4">
                   <Clock className="mt-0.5 h-5 w-5 text-primary" />
+
                   <div>
                     <p className="font-medium">Hours</p>
-                    <p className="text-muted-foreground">Mon–Sat · 8:30 – 17:30</p>
+
+                    <p className="text-muted-foreground">
+                      Mon–Sat · 8:30 – 17:30
+                    </p>
                   </div>
                 </li>
               </ul>
@@ -147,13 +193,25 @@ function ContactPage() {
 }
 
 function Field({
-  label, name, type = "text", required, placeholder,
-}: { label: string; name: string; type?: string; required?: boolean; placeholder?: string }) {
+  label,
+  name,
+  type = "text",
+  required,
+  placeholder,
+}: {
+  label: string;
+  name: string;
+  type?: string;
+  required?: boolean;
+  placeholder?: string;
+}) {
   return (
     <div>
       <label className="block text-xs uppercase tracking-[0.2em] text-muted-foreground">
-        {label}{required && " *"}
+        {label}
+        {required && " *"}
       </label>
+
       <input
         name={name}
         type={type}
@@ -164,3 +222,4 @@ function Field({
     </div>
   );
 }
+
