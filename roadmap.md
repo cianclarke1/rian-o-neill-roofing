@@ -1,0 +1,1 @@
+- [ ] Add real photos under the 3 shed categories (image7 timber, image4 metal, uploaded premium metal)
