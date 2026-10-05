@@ -5,6 +5,8 @@ import { useState, type FormEvent } from "react";
 import { toast } from "sonner";
 import { Toaster } from "@/components/ui/sonner";
 
+const FORMSPREE_ENDPOINT = "https://formspree.io/f/xwlvkgzv";
+
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
@@ -28,14 +30,36 @@ export const Route = createFileRoute("/contact")({
 function ContactPage() {
   const [submitting, setSubmitting] = useState(false);
 
-  function onSubmit(e: FormEvent<HTMLFormElement>) {
+  async function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+
+    const form = e.currentTarget;
     setSubmitting(true);
-    setTimeout(() => {
-      toast.success("Thanks — we'll be in touch within 24 hours.");
-      (e.target as HTMLFormElement).reset();
+
+    try {
+      const response = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        body: new FormData(form),
+        headers: {
+          Accept: "application/json",
+        },
+      });
+
+      if (response.ok) {
+        toast.success("Thanks — your enquiry has been sent.");
+        form.reset();
+      } else {
+        toast.error(
+          "Something went wrong. Please try again or contact us directly."
+        );
+      }
+    } catch {
+      toast.error(
+        "Something went wrong. Please try again or contact us directly."
+      );
+    } finally {
       setSubmitting(false);
-    }, 600);
+    }
   }
 
   return (
@@ -112,6 +136,12 @@ function ContactPage() {
                 className="mt-2 w-full rounded-md border border-input bg-background px-4 py-3 text-base focus:border-primary focus:outline-none"
               />
             </div>
+
+            <input
+              type="hidden"
+              name="_subject"
+              value="New Garden Shed Enquiry — Rian O'Neill"
+            />
 
             <button
               type="submit"
