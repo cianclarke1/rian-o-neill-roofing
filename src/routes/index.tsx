@@ -4,9 +4,9 @@ import { TikTokEmbed } from "@/components/TikTokEmbed";
 import { ArrowRight, Hammer, TreePine, ShieldCheck, Quote } from "lucide-react";
 import heroShed from "@/assets/hero-shed.jpg";
 import craftHands from "@/assets/craft-hands.jpg";
-import timberShed from "@/assets/timber-shed.jpeg.asset.json";
-import metalShed from "@/assets/metal-shed.jpeg.asset.json";
-import premiumMetalShed from "@/assets/premium-metal-shed.webp.asset.json";
+import timberShed from "@/assets/timber-shed.jpeg";
+import metalShed from "@/assets/metal-shed.jpeg";
+import premiumMetalShed from "@/assets/premium-metal-shed.webp";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -28,9 +28,9 @@ export const Route = createFileRoute("/")({
 });
 
 const availableSheds = [
-  { category: "Timber", brand: "Abwood", sizes: ["8×6", "10×6"], img: timberShed.url, alt: "Finished timber shed" },
-  { category: "Metal", brand: "Globel", sizes: ["8×6", "10×7", "10×12"], img: metalShed.url, alt: "Finished metal shed" },
-  { category: "Premium Metal", brand: "Satus", sizes: ["6×4", "9×6"], img: premiumMetalShed.url, alt: "White and grey premium metal shed with black trim" },
+  { category: "Timber", brand: "Abwood", sizes: ["8×6", "10×6"], img: timberShed, alt: "Finished timber shed" },
+  { category: "Metal", brand: "Globel", sizes: ["8×6", "10×7", "10×12"], img: metalShed, alt: "Finished metal shed" },
+  { category: "Premium Metal", brand: "Satus", sizes: ["6×4", "9×6"], img: premiumMetalShed, alt: "White and grey premium metal shed with black trim" },
 ];
 
 const tiktokVideos = [
