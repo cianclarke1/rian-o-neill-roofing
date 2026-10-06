@@ -10,17 +10,23 @@ const FORMSPREE_ENDPOINT = "https://formspree.io/f/xwlvkgzv";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Rian O'Neill Garden Sheds, Killarney" },
+      {
+        title: "Contact Rian O'Neill Garden Sheds | Kerry, Cork & Limerick",
+      },
       {
         name: "description",
         content:
-          "Get in touch with Rian O'Neill Garden Sheds for quality garden sheds supplied and installed across Killarney, Co. Kerry and surrounding areas.",
+          "Contact Rian O'Neill Garden Sheds for a free quote. Timber, metal and premium metal garden sheds supplied, delivered and professionally installed across Kerry, Cork and Limerick.",
       },
-      { property: "og:title", content: "Contact Rian O'Neill Garden Sheds" },
+      {
+        property: "og:title",
+        content:
+          "Contact Rian O'Neill Garden Sheds | Kerry, Cork & Limerick",
+      },
       {
         property: "og:description",
         content:
-          "Quality garden sheds supplied, delivered and professionally installed across Kerry and surrounding areas.",
+          "Get a free quote for a garden shed supplied, delivered and professionally installed across Kerry, Cork and Limerick.",
       },
     ],
   }),
@@ -78,10 +84,10 @@ function ContactPage() {
         </h1>
 
         <p className="mt-8 max-w-xl text-lg leading-relaxed text-muted-foreground">
-          Get in touch with Rian to discuss your shed requirements. Whether
-          you're looking for a timber shed, metal shed or premium metal shed,
-          we can help you choose the right option and take care of delivery
-          and installation.
+          Get in touch with Rian for a free quote. Whether you're looking for
+          a timber shed, metal shed or premium metal shed, we can help you
+          choose the right option and take care of delivery and professional
+          installation across Kerry, Cork and Limerick.
         </p>
       </section>
 
@@ -252,4 +258,3 @@ function Field({
     </div>
   );
 }
-
