@@ -7,15 +7,27 @@ import heroShed from "@/assets/hero-shed.jpg";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Rian O'Neill Garden Sheds, Killarney" },
+      {
+        title: "About Rian O'Neill Garden Sheds | Kerry, Cork & Limerick",
+      },
       {
         name: "description",
         content:
-          "Rian O'Neill has been building garden sheds in Killarney, Co. Kerry for over two decades. Honest joinery, local timber, and a love of the craft.",
+          "Rian O'Neill Garden Sheds supplies, delivers and professionally installs quality timber, metal and premium metal garden sheds across Kerry, Cork and Limerick.",
       },
-      { property: "og:title", content: "About Rian O'Neill Garden Sheds" },
-      { property: "og:description", content: "Quality garden sheds, supplied and installed with very big standards." },
-      { property: "og:image", content: craftHands },
+      {
+        property: "og:title",
+        content: "About Rian O'Neill Garden Sheds",
+      },
+      {
+        property: "og:description",
+        content:
+          "Quality garden sheds supplied, delivered and professionally installed across Kerry, Cork and Limerick.",
+      },
+      {
+        property: "og:image",
+        content: craftHands,
+      },
     ],
   }),
   component: AboutPage,
@@ -25,10 +37,14 @@ function AboutPage() {
   return (
     <SiteLayout>
       <section className="mx-auto max-w-7xl px-6 pb-16 pt-24 lg:px-10 lg:pb-24 lg:pt-32">
-        <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">About</p>
+        <p className="text-xs uppercase tracking-[0.3em] text-muted-foreground">
+          About
+        </p>
+
         <h1 className="mt-4 max-w-4xl font-display text-5xl leading-[1.05] text-balance sm:text-6xl lg:text-7xl">
-          Quality garden sheds, supplied and installed.<br />
-          <em className="font-light italic">with very big standards.</em>
+          Quality garden sheds,
+          <br />
+          <em className="font-light italic">supplied & installed.</em>
         </h1>
       </section>
 
@@ -36,7 +52,7 @@ function AboutPage() {
         <div className="aspect-[16/9] overflow-hidden rounded-lg">
           <img
             src={heroShed}
-            alt="The Kerry landscape where every Rian O'Neill shed begins"
+            alt="Garden shed in the Kerry landscape"
             loading="lazy"
             width={1920}
             height={1080}
@@ -50,15 +66,31 @@ function AboutPage() {
           <p className="text-xs uppercase tracking-[0.25em] text-muted-foreground md:col-span-3">
             The story
           </p>
-          <div className="md:col-span-9 space-y-6 text-lg leading-relaxed text-foreground/85">
+
+          <div className="space-y-6 text-lg leading-relaxed text-foreground/85 md:col-span-9">
             <p>
-              Rian O&apos;Neill Garden Sheds supplies and installs quality garden sheds for customers across Killarney, Kerry and the surrounding areas. With more than two years of experience in the trade, Rian provides a reliable and straightforward service from helping customers choose the right shed through to delivery and installation.
+              Rian O&apos;Neill Garden Sheds supplies and installs quality
+              garden sheds for customers across Kerry, Cork, Limerick and the
+              surrounding areas. With more than two years of experience in the
+              trade, Rian provides a reliable and straightforward service from
+              helping customers choose the right shed through to delivery and
+              professional installation.
             </p>
+
             <p>
-              The range includes traditional timber sheds, practical metal sheds and premium metal options, with a variety of sizes and styles to suit different gardens, storage needs and budgets. Whether you need extra storage, a workshop space or simply a practical addition to your garden, there is an option to suit your needs.
+              The range includes traditional timber sheds, practical metal
+              sheds and premium metal options, with a variety of sizes and
+              styles to suit different gardens, storage needs and budgets.
+              Whether you need somewhere to store tools and bikes, additional
+              garden storage or a practical workspace, there is a range of
+              options to choose from.
             </p>
+
             <p>
-              From choosing your shed to getting it installed, the aim is to make the whole process as simple as possible. Rian takes pride in providing a friendly, professional service and making sure every shed is supplied and installed to a high standard.
+              From choosing your shed to getting it installed, the aim is to
+              make the whole process as simple as possible. Rian takes pride in
+              providing a friendly, professional service and ensuring every
+              customer receives a quality shed and a reliable installation.
             </p>
           </div>
         </div>
@@ -71,14 +103,18 @@ function AboutPage() {
               <p className="text-xs uppercase tracking-[0.25em] text-muted-foreground">
                 Where we work
               </p>
+
               <h2 className="mt-3 font-display text-4xl text-balance sm:text-5xl">
-                Made in Kerry. Delivered across Munster.
+                Garden sheds supplied and installed across Kerry, Cork and
+                Limerick.
               </h2>
+
               <p className="mt-6 max-w-md leading-relaxed text-muted-foreground">
-                Our home is Killarney, but we install regularly in Tralee, Kenmare,
-                Cork, Limerick and the wider Munster region. Further afield? Get in
-                touch — we'll travel for the right project.
+                Based in Killarney, Rian O&apos;Neill Garden Sheds supplies,
+                delivers and professionally installs garden sheds for
+                customers across Kerry, Cork, Limerick and surrounding areas.
               </p>
+
               <Link
                 to="/contact"
                 className="group mt-10 inline-flex items-center gap-2 rounded-full bg-foreground px-7 py-3.5 text-sm font-medium text-background transition-all hover:bg-primary"
@@ -87,10 +123,11 @@ function AboutPage() {
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
               </Link>
             </div>
+
             <div className="aspect-[4/5] overflow-hidden rounded-lg">
               <img
                 src={craftHands}
-                alt="Craftsman's hands shaping timber"
+                alt="Garden shed installation"
                 loading="lazy"
                 width={1080}
                 height={1600}
