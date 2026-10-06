@@ -80,57 +80,60 @@ function HomePage() {
   return (
     <SiteLayout>
       {/* Hero */}
-      <section className="relative isolate overflow-hidden">
-        <div className="grain absolute inset-0 -z-10">
+      <section className="relative">
+        <div className="relative h-[58vh] min-h-[520px] overflow-hidden">
           <img
             src={heroShed}
             alt="A garden shed set against the mountains of Kerry"
-            className="h-full w-full object-cover"
+            className="absolute inset-0 h-full w-full object-cover"
             width={1920}
             height={1280}
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-foreground/30 via-foreground/20 to-background" />
-        </div>
 
-        <div className="mx-auto flex min-h-[88vh] max-w-7xl flex-col justify-end px-6 pb-20 pt-40 lg:px-10 lg:pb-28">
-          <p className="fade-up text-xs uppercase tracking-[0.3em] text-background/90">
-            Killarney · Co. Kerry · Supply & Installation
-          </p>
+          <div className="absolute inset-0 bg-gradient-to-t from-foreground/90 via-foreground/35 to-foreground/10" />
 
-          <h1 className="fade-up fade-up-delay-1 mt-6 max-w-4xl font-display text-5xl leading-[1.05] text-background text-balance sm:text-6xl lg:text-7xl">
-            Quality garden sheds,
-            <br />
-            <em className="font-light italic">supplied & installed.</em>
-          </h1>
+          <div className="absolute inset-x-0 bottom-0">
+            <div className="mx-auto max-w-7xl px-6 pb-10 lg:px-10 lg:pb-12">
+              <p className="fade-up text-xs uppercase tracking-[0.3em] text-background/90">
+                Killarney · Co. Kerry · Supply & Installation
+              </p>
 
-          <p className="fade-up fade-up-delay-2 mt-8 max-w-xl text-lg leading-relaxed text-background/85">
-            Quality timber and metal garden sheds supplied, delivered and
-            professionally installed across Killarney, County Kerry and the
-            surrounding areas.
-          </p>
+              <h1 className="fade-up fade-up-delay-1 mt-4 max-w-4xl font-display text-5xl leading-[1.05] text-background text-balance sm:text-6xl lg:text-7xl">
+                Quality garden sheds,
+                <br />
+                <em className="font-light italic">supplied & installed.</em>
+              </h1>
 
-          <div className="fade-up fade-up-delay-3 mt-10 flex flex-wrap items-center gap-4">
-            <Link
-              to="/contact"
-              className="group inline-flex items-center gap-2 rounded-full bg-background px-7 py-3.5 text-sm font-medium text-foreground transition-all hover:bg-primary hover:text-primary-foreground"
-            >
-              Request a Quote
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Link>
+              <p className="fade-up fade-up-delay-2 mt-5 max-w-xl text-base leading-relaxed text-background/85 sm:text-lg">
+                Quality timber and metal garden sheds supplied, delivered and
+                professionally installed across Killarney, County Kerry and
+                the surrounding areas.
+              </p>
 
-            <Link
-              to="/range"
-              className="inline-flex items-center gap-2 rounded-full border border-background/40 px-7 py-3.5 text-sm font-medium text-background transition-all hover:border-background"
-            >
-              Explore the Range
-            </Link>
+              <div className="fade-up fade-up-delay-3 mt-6 flex flex-wrap items-center gap-4">
+                <Link
+                  to="/contact"
+                  className="group inline-flex items-center gap-2 rounded-full bg-background px-7 py-3.5 text-sm font-medium text-foreground transition-all hover:bg-primary hover:text-primary-foreground"
+                >
+                  Request a Quote
+                  <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
+                </Link>
+
+                <Link
+                  to="/range"
+                  className="inline-flex items-center gap-2 rounded-full border border-background/40 px-7 py-3.5 text-sm font-medium text-background transition-all hover:border-background"
+                >
+                  Explore the Range
+                </Link>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
       {/* Intro */}
-      <section className="mx-auto max-w-7xl px-6 py-24 lg:px-10 lg:py-32">
-        <div className="grid gap-16 md:grid-cols-12">
+      <section className="mx-auto max-w-7xl px-6 py-14 lg:px-10 lg:py-20">
+        <div className="grid gap-10 md:grid-cols-12">
           <p className="text-xs uppercase tracking-[0.25em] text-muted-foreground md:col-span-3">
             Our Service
           </p>
@@ -140,7 +143,7 @@ function HomePage() {
               Garden sheds made simple.
             </h2>
 
-            <p className="mt-8 max-w-2xl text-base leading-relaxed text-muted-foreground">
+            <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground">
               Whether you're looking for a timber shed, metal shed or premium
               metal option, Rian O'Neill Garden Sheds can supply and install
               the right shed for your garden. With more than two years of
@@ -370,4 +373,3 @@ function HomePage() {
     </SiteLayout>
   );
 }
-
