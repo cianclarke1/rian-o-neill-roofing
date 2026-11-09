@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://rianoneillgardensheds.ie/sitemap.xml
+Sitemap: https://www.rianoneillgardensheds.ie/sitemap.xml
