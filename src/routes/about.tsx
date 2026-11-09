@@ -13,7 +13,7 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "Rian O'Neill Garden Sheds supplies, delivers and professionally installs quality timber, metal and premium metal garden sheds across Kerry, Cork and Limerick.",
+          "Rian O'Neill Garden Sheds supplies, delivers and professionally installs quality timber garden sheds across Kerry, Cork and Limerick.",
       },
       {
         property: "og:title",
@@ -22,7 +22,7 @@ export const Route = createFileRoute("/about")({
       {
         property: "og:description",
         content:
-          "Quality garden sheds supplied, delivered and professionally installed across Kerry, Cork and Limerick.",
+          "Quality timber garden sheds supplied, delivered and professionally installed across Kerry, Cork and Limerick.",
       },
       {
         property: "og:image",
@@ -78,12 +78,11 @@ function AboutPage() {
             </p>
 
             <p>
-              The range includes traditional timber sheds, practical metal
-              sheds and premium metal options, with a variety of sizes and
-              styles to suit different gardens, storage needs and budgets.
-              Whether you need somewhere to store tools and bikes, additional
-              garden storage or a practical workspace, there is a range of
-              options to choose from.
+              Rian specialises in traditional timber garden sheds, available
+              in a choice of sizes to suit different gardens and storage
+              needs. Whether you need somewhere to store tools and bikes,
+              additional garden storage or a practical workspace, a quality
+              timber shed is a great fit.
             </p>
 
             <p>

@@ -29,8 +29,8 @@ export const Route = createRootRoute({
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Rian O'Neill Garden Sheds — Hand-built in Killarney, Co. Kerry" },
-      { name: "description", content: "Bespoke timber garden sheds, workshops and garden rooms hand-built in Killarney, Co. Kerry." },
+      { title: "Rian O'Neill Garden Sheds — Timber Sheds in Killarney, Co. Kerry" },
+      { name: "description", content: "Quality timber garden sheds supplied, delivered and professionally installed across Kerry, Cork and Limerick." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],

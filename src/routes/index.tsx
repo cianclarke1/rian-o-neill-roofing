@@ -5,19 +5,17 @@ import { ArrowRight, Hammer, TreePine, ShieldCheck, Quote } from "lucide-react";
 import heroShed from "@/assets/hero-shed.jpg";
 import craftHands from "@/assets/craft-hands.jpg";
 import timberShed from "@/assets/timber-shed.jpeg";
-import metalShed from "@/assets/metal-shed.jpeg";
-import premiumMetalShed from "@/assets/premium-metal-shed.webp";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       {
-        title: "Rian O'Neill Garden Sheds — Supply & Installation in Kerry",
+        title: "Rian O'Neill Garden Sheds — Timber Shed Supply & Installation in Kerry",
       },
       {
         name: "description",
         content:
-          "Quality timber and metal garden sheds supplied and professionally installed across Killarney, County Kerry and surrounding areas. Over 2 years of experience.",
+          "Quality timber garden sheds supplied and professionally installed across Killarney, County Kerry and surrounding areas. Over 2 years of experience.",
       },
       {
         property: "og:title",
@@ -26,36 +24,20 @@ export const Route = createFileRoute("/")({
       {
         property: "og:description",
         content:
-          "Quality garden sheds supplied, delivered and professionally installed across Kerry and surrounding areas.",
+          "Quality timber garden sheds supplied, delivered and professionally installed across Kerry and surrounding areas.",
       },
     ],
   }),
   component: HomePage,
 });
 
-const availableSheds = [
-  {
-    category: "Timber",
-    brand: "Abwood",
-    sizes: ["8×6", "10×6"],
-    img: timberShed,
-    alt: "Finished timber shed",
-  },
-  {
-    category: "Metal",
-    brand: "Globel",
-    sizes: ["8×6", "10×7", "10×12"],
-    img: metalShed,
-    alt: "Finished metal shed",
-  },
-  {
-    category: "Premium Metal",
-    brand: "Satus",
-    sizes: ["6×4", "9×6"],
-    img: premiumMetalShed,
-    alt: "White and grey premium metal shed with black trim",
-  },
-];
+const featuredShed = {
+  category: "Timber",
+  brand: "Abwood",
+  sizes: ["8×6", "10×6"],
+  img: timberShed,
+  alt: "Finished timber shed",
+};
 
 const tiktokVideos = [
   {
@@ -105,7 +87,7 @@ function HomePage() {
               </h1>
 
               <p className="fade-up fade-up-delay-2 mt-5 max-w-xl text-base leading-relaxed text-background/85 sm:text-lg">
-                Quality timber and metal garden sheds supplied, delivered and
+                Quality timber garden sheds supplied, delivered and
                 professionally installed across Killarney, County Kerry and
                 the surrounding areas.
               </p>
@@ -144,9 +126,8 @@ function HomePage() {
             </h2>
 
             <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground">
-              Whether you're looking for a timber shed, metal shed or premium
-              metal option, Rian O'Neill Garden Sheds can supply and install
-              the right shed for your garden. With more than two years of
+              Rian O'Neill Garden Sheds supplies and installs quality timber
+              garden sheds, built to suit your garden and storage needs. With more than two years of
               experience, we provide a straightforward service from choosing
               your shed through to delivery and installation.
             </p>
@@ -164,7 +145,7 @@ function HomePage() {
               </p>
 
               <h2 className="mt-3 font-display text-4xl text-balance sm:text-5xl">
-                Choose your shed.
+                Our timber shed.
               </h2>
             </div>
 
@@ -172,42 +153,51 @@ function HomePage() {
               to="/range"
               className="hidden items-center gap-2 text-sm text-primary hover:gap-3 sm:inline-flex"
             >
-              See the full range <ArrowRight className="h-4 w-4" />
+              See sizes & details <ArrowRight className="h-4 w-4" />
             </Link>
           </div>
 
-          <div className="mt-16 grid gap-8 md:grid-cols-3">
-            {availableSheds.map((shed) => (
-              <article
-                key={shed.brand}
-                className="rounded-lg border border-border bg-background p-8"
+          <article className="mt-16 grid overflow-hidden rounded-lg border border-border bg-background md:grid-cols-2">
+            <div className="aspect-[4/3] bg-muted md:aspect-auto">
+              <img
+                src={featuredShed.img}
+                alt={featuredShed.alt}
+                loading="lazy"
+                className="h-full w-full object-cover"
+              />
+            </div>
+
+            <div className="p-8 lg:p-12">
+              <p className="text-xs uppercase tracking-[0.25em] text-primary">
+                {featuredShed.category}
+              </p>
+
+              <h3 className="mt-3 font-display text-4xl">
+                {featuredShed.brand}
+              </h3>
+
+              <p className="mt-4 leading-relaxed text-muted-foreground">
+                Classic timber garden sheds with natural warmth and character —
+                a practical space for tools, bikes and garden equipment.
+              </p>
+
+              <ul className="mt-6 space-y-2 text-sm text-muted-foreground">
+                {featuredShed.sizes.map((size) => (
+                  <li key={size} className="flex items-center gap-3">
+                    <span className="h-px w-6 bg-primary" />
+                    {size} ft
+                  </li>
+                ))}
+              </ul>
+
+              <Link
+                to="/range"
+                className="mt-8 inline-flex items-center gap-2 text-sm text-primary hover:gap-3 sm:hidden"
               >
-                <p className="text-xs uppercase tracking-[0.25em] text-primary">
-                  {shed.category}
-                </p>
-
-                <h3 className="mt-3 font-display text-3xl">{shed.brand}</h3>
-
-                <ul className="mt-6 space-y-2 text-sm text-muted-foreground">
-                  {shed.sizes.map((size) => (
-                    <li key={size} className="flex items-center gap-3">
-                      <span className="h-px w-6 bg-primary" />
-                      {size} ft
-                    </li>
-                  ))}
-                </ul>
-
-                <div className="mt-6 aspect-[4/3] overflow-hidden rounded-lg bg-muted">
-                  <img
-                    src={shed.img}
-                    alt={shed.alt}
-                    loading="lazy"
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-              </article>
-            ))}
-          </div>
+                See sizes & details <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+          </article>
 
           <div className="mt-16 rounded-2xl bg-foreground p-10 text-center text-background md:p-14">
             <h3 className="font-display text-3xl text-balance sm:text-4xl">
@@ -215,8 +205,8 @@ function HomePage() {
             </h3>
 
             <p className="mx-auto mt-4 max-w-xl text-sm leading-relaxed text-background/70">
-              Choose your shed and we'll take care of the rest. We supply,
-              deliver and professionally install garden sheds across Kerry and
+              Pick your size and we'll take care of the rest. We supply,
+              deliver and professionally install timber garden sheds across Kerry and
               surrounding areas.
             </p>
 
@@ -296,8 +286,8 @@ function HomePage() {
               {[
                 {
                   Icon: Hammer,
-                  title: "Quality sheds",
-                  body: "A range of timber and metal sheds to suit different gardens, needs and budgets.",
+                  title: "Quality timber sheds",
+                  body: "Well-built timber sheds in a choice of sizes to suit your garden.",
                 },
                 {
                   Icon: TreePine,
