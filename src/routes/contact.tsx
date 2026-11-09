@@ -16,7 +16,7 @@ export const Route = createFileRoute("/contact")({
       {
         name: "description",
         content:
-          "Contact Rian O'Neill Garden Sheds for a free quote. Timber garden sheds supplied, delivered and professionally installed across Kerry, Cork and Limerick.",
+          "Contact Rian O'Neill Garden Sheds for a free quote. Timber garden sheds supplied and installed, shed repairs and timber work across Kerry, Cork and Limerick.",
       },
       {
         property: "og:title",
@@ -26,7 +26,7 @@ export const Route = createFileRoute("/contact")({
       {
         property: "og:description",
         content:
-          "Get a free quote for a timber garden shed supplied, delivered and professionally installed across Kerry, Cork and Limerick.",
+          "Get a free quote for a new timber shed, shed repair or timber work, supplied, delivered and professionally installed across Kerry, Cork and Limerick.",
       },
     ],
   }),
@@ -84,9 +84,9 @@ function ContactPage() {
         </h1>
 
         <p className="mt-8 max-w-xl text-lg leading-relaxed text-muted-foreground">
-          Get in touch with Rian for a free quote on a timber garden shed. We
-          can help you choose the right size and take care of delivery and
-          professional installation across Kerry, Cork and Limerick.
+          Get in touch with Rian for a free quote on a new timber shed, a
+          repair to your existing shed, or any other timber work across
+          Kerry, Cork and Limerick.
         </p>
       </section>
 
@@ -110,11 +110,11 @@ function ContactPage() {
 
             <div>
               <label className="block text-xs uppercase tracking-[0.2em] text-muted-foreground">
-                Shed size
+                What do you need?
               </label>
 
               <select
-                name="size"
+                name="service"
                 className="mt-2 w-full rounded-md border border-input bg-background px-4 py-3 text-base focus:border-primary focus:outline-none"
                 defaultValue=""
                 required
@@ -122,8 +122,10 @@ function ContactPage() {
                 <option value="" disabled>
                   Choose one…
                 </option>
-                <option>8×6 ft timber shed</option>
-                <option>10×6 ft timber shed</option>
+                <option>New 8×6 ft timber shed</option>
+                <option>New 10×6 ft timber shed</option>
+                <option>Shed repair</option>
+                <option>Other timber work</option>
                 <option>Not sure yet</option>
               </select>
             </div>

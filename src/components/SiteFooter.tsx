@@ -14,7 +14,7 @@ export function SiteFooter() {
               </span>
             </h3>
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-background/70">
-              Quality garden sheds supplied and professionally installed across Killarney, County Kerry and the surrounding areas.
+              Quality timber garden sheds supplied and installed, plus shed repairs and timber work, across Killarney, County Kerry and the surrounding areas.
             </p>
           </div>
 
@@ -40,6 +40,7 @@ export function SiteFooter() {
             <p className="text-xs uppercase tracking-[0.2em] text-background/50">Explore</p>
             <ul className="mt-4 space-y-3 text-sm text-background/80">
               <li><Link to="/range" className="hover:text-background">The Range</Link></li>
+              <li><Link to="/services" className="hover:text-background">Repairs &amp; Timber Work</Link></li>
               <li><Link to="/about" className="hover:text-background">About</Link></li>
               <li><Link to="/contact" className="hover:text-background">Get a Quote</Link></li>
             </ul>

@@ -5,6 +5,7 @@ import { Menu, X } from "lucide-react";
 const nav = [
   { to: "/", label: "Home" },
   { to: "/range", label: "The Range" },
+  { to: "/services", label: "Repairs & Timber Work" },
   { to: "/about", label: "About" },
   { to: "/contact", label: "Contact" },
 ] as const;
@@ -24,7 +25,7 @@ export function SiteHeader() {
           </span>
         </Link>
 
-        <nav className="hidden items-center gap-10 md:flex">
+        <nav className="hidden items-center gap-8 whitespace-nowrap lg:flex xl:gap-10">
           {nav.map((item) => (
             <Link
               key={item.to}
@@ -47,14 +48,14 @@ export function SiteHeader() {
         <button
           aria-label="Toggle menu"
           onClick={() => setOpen(!open)}
-          className="md:hidden"
+          className="lg:hidden"
         >
           {open ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
         </button>
       </div>
 
       {open && (
-        <div className="border-t border-border/60 md:hidden">
+        <div className="border-t border-border/60 lg:hidden">
           <nav className="mx-auto flex max-w-7xl flex-col gap-1 px-6 py-4">
             {nav.map((item) => (
               <Link

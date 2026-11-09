@@ -1,7 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { SiteLayout } from "@/components/SiteLayout";
 import { TikTokEmbed } from "@/components/TikTokEmbed";
-import { ArrowRight, Hammer, TreePine, ShieldCheck, Quote } from "lucide-react";
+import { RepairGallery } from "@/components/RepairGallery";
+import { ArrowRight, Hammer, TreePine, ShieldCheck, Quote, Wrench } from "lucide-react";
 import heroShed from "@/assets/hero-shed.jpg";
 import craftHands from "@/assets/craft-hands.jpg";
 import timberShed from "@/assets/timber-shed.jpeg";
@@ -15,7 +16,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Quality timber garden sheds supplied and professionally installed across Killarney, County Kerry and surrounding areas. Over 2 years of experience.",
+          "Quality timber garden sheds supplied and professionally installed, plus shed repairs and timber work, across Killarney, County Kerry and surrounding areas.",
       },
       {
         property: "og:title",
@@ -127,7 +128,9 @@ function HomePage() {
 
             <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground">
               Rian O'Neill Garden Sheds supplies and installs quality timber
-              garden sheds, built to suit your garden and storage needs. With more than two years of
+              garden sheds, built to suit your garden and storage needs. Rian
+              also repairs existing sheds and takes on all kinds of timber
+              work. With more than two years of
               experience, we provide a straightforward service from choosing
               your shed through to delivery and installation.
             </p>
@@ -218,6 +221,67 @@ function HomePage() {
               <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </div>
+        </div>
+      </section>
+
+      {/* Repairs & timber work */}
+      <section className="mx-auto max-w-7xl px-6 pt-24 lg:px-10 lg:pt-32">
+        <div className="flex items-end justify-between gap-6">
+          <div>
+            <p className="text-xs uppercase tracking-[0.25em] text-muted-foreground">
+              More than new sheds
+            </p>
+
+            <h2 className="mt-3 font-display text-4xl text-balance sm:text-5xl">
+              Repairs & timber work.
+            </h2>
+          </div>
+
+          <Link
+            to="/services"
+            className="hidden items-center gap-2 text-sm text-primary hover:gap-3 sm:inline-flex"
+          >
+            See all services <ArrowRight className="h-4 w-4" />
+          </Link>
+        </div>
+
+        <div className="mt-12">
+          <RepairGallery />
+        </div>
+
+        <div className="mt-12 grid gap-8 md:grid-cols-2">
+          {[
+            {
+              Icon: Wrench,
+              title: "Shed repairs",
+              body: "Leaking roof, rotten boards or a door that won't close? Rian can repair your existing shed and get it back in good shape.",
+            },
+            {
+              Icon: Hammer,
+              title: "General timber work",
+              body: "If it's made of timber, ask Rian. From small fixes to bigger jobs around the garden and home.",
+            },
+          ].map(({ Icon, title, body }) => (
+            <Link
+              key={title}
+              to="/services"
+              className="group flex gap-5 rounded-lg border border-border p-8 transition-colors hover:border-primary"
+            >
+              <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary">
+                <Icon className="h-5 w-5" />
+              </div>
+
+              <div>
+                <h3 className="font-display text-2xl">{title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                  {body}
+                </p>
+                <span className="mt-4 inline-flex items-center gap-2 text-sm text-primary group-hover:gap-3">
+                  Find out more <ArrowRight className="h-4 w-4" />
+                </span>
+              </div>
+            </Link>
+          ))}
         </div>
       </section>
 

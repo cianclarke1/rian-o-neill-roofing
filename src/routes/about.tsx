@@ -86,6 +86,12 @@ function AboutPage() {
             </p>
 
             <p>
+              Rian also repairs existing sheds and takes on general timber
+              work, so if you have a shed that needs fixing or another timber
+              job in mind, get in touch.
+            </p>
+
+            <p>
               From choosing your shed to getting it installed, the aim is to
               make the whole process as simple as possible. Rian takes pride in
               providing a friendly, professional service and ensuring every
